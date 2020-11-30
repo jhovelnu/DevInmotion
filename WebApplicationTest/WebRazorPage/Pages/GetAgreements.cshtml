@@ -1,0 +1,31 @@
+﻿@page
+@model WebRazorPage.Pages.GetAgreementsModel
+@using WebRazorPage.Models
+@{
+    ViewData["Title"] = "Get Agreements";
+}
+
+<h1>Get Agreements</h1>
+
+<form method="get">
+    @*<button type="submit">Get Agreements</button>*@
+</form>
+
+<hr />
+<table cellpadding="3" cellspacing="3">
+    <tr>
+        <th>CustomerID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Amount</th>
+    </tr>
+    @foreach (AgreementModel agreement in Model.agreementsList)
+    {
+        <tr>
+            <td>@agreement.Id</td>
+            <td>@agreement.Name</td>
+            <td>@agreement.Description</td>
+            <td>@agreement.Amount</td>
+        </tr>
+    }
+</table>
